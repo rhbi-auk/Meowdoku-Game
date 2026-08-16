@@ -13,7 +13,7 @@ public class HumanPlayer extends Player {
     }
     private int getValidPosition(String prompt, int size) {
         int userInput;
-        do{
+        do {
             System.out.print(prompt);
             userInput = scanner.nextInt();
         } while (userInput < 0 || userInput >= size);
