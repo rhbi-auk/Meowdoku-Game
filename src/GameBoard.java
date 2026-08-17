@@ -76,7 +76,7 @@ public class GameBoard {
             return GuessResult.WRONG;
         }
     }
-
+    @Override
     public String toString() {
         //"RBBB\nRBBB\nRRGG\nYYGG"
         //Cell object toString() returns char
