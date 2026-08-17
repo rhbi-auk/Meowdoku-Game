@@ -11,6 +11,7 @@ public class Cell {
     public void setState(CellState state) {
         this.state = state;
     }
+    @Override
     public String toString() {
         if (state == CellState.HIDDEN) {
             return "" + colour.toString().charAt(0);
