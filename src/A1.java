@@ -19,7 +19,7 @@ enum CellState {
     HIDDEN('_'), FOUND_CAT('C'), WRONG_GUESS('X');
 
     private final char symbol;
-    private CellState(final char symbol) {
+    CellState(final char symbol) {
         this.symbol = symbol;
     }
     public char getSymbol() {
@@ -32,7 +32,7 @@ enum GuessResult {
 
     private final int score;
     private final String message;
-    private GuessResult(int score, String message) {
+    GuessResult(int score, String message) {
         this.score = score;
         this.message = message;
     }

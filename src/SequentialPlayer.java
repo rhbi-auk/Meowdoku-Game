@@ -4,6 +4,8 @@ public class SequentialPlayer extends Player {
         super(name, size);
         nextPosition = 0;
     }
+
+    @Override
     public Position makeGuess() {
         //modulus division of size
         //remainder = column value

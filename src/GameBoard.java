@@ -57,17 +57,11 @@ public class GameBoard {
     }
 
     public GuessResult checkGuess(Position position) {
-        //if guessed, return already_guessed
-        //if position matches solution, change
-        //cell state to found_cat and return correct
-        //else, change to wrong_guess and return wrong
         Cell guessedCell = board[position.getRow()][position.getColumn()];
 
         //All cells initialise with state HIDDEN
         if (guessedCell.getState() != CellState.HIDDEN) {
             return GuessResult.ALREADY_GUESSED;
-            //compare using solution array where:
-            //row = index; column = position.getColumn
         } else if (solution[position.getRow()] == position.getColumn()) {
             guessedCell.setState(CellState.FOUND_CAT);
             return GuessResult.CORRECT;
@@ -76,10 +70,9 @@ public class GameBoard {
             return GuessResult.WRONG;
         }
     }
+
     @Override
     public String toString() {
-        //"RBBB\nRBBB\nRRGG\nYYGG"
-        //Cell object toString() returns char
         StringBuilder gameBoardString = new StringBuilder();
         for (Cell[] row : board) {
             for (Cell cell : row) {

@@ -4,6 +4,7 @@ public abstract class Player {
     private int catsFound;
     private int score;
     protected int size;
+
     public Player(String name, int size) {
         this.name = name;
         this.size = size;
@@ -11,9 +12,11 @@ public abstract class Player {
         catsFound = 0;
         score = 0;
     }
+
     public int getScore() {
         return score;
     }
+
     public void recordGuess(GuessResult result) {
         guesses += 1;
         score += result.getScore();
@@ -21,13 +24,18 @@ public abstract class Player {
             catsFound += 1;
         }
     }
+
     public boolean allCatsFound(int numberOfCats) {
         return (numberOfCats == catsFound);
     }
+
     public void printStatistics() {
         System.out.printf("Player: %s\nNumber of guesses: %d\nCats found: %d\nScore: %d\n", name, guesses, catsFound, score);
     }
+
     abstract Position makeGuess();
+
+    @Override
     public String toString() {
         return String.format("%s (Score: %d)", name, score);
     }
